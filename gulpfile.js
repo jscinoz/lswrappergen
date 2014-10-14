@@ -149,5 +149,7 @@ function createTasks(prefix, taskBuilder) {
     return brandTasks;
 }
 
-gulp.task("default", createTasks("build", makeTask));
+gulp.task("build", createTasks("build", makeTask));
 gulp.task("watch", createTasks("watch", makeWatch));
+
+gulp.task("default", ["build", "watch"]);
