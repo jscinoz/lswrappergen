@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- LOCALIST COMMENT - START head_tags -->
+        <!-- LOCALIST COMMENT - PLACEHOLDER localist_styles -->
+        <!-- LOCALIST COMMENT - PLACEHOLDER localist_js -->
+        {{! NOTE: Localist injects the <title> tag, so don't add it here }}
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- LOCALIST COMMENT - END head_tags -->
+    </head>
+    <body>
+        {{! If IE & IE LT 11, show message advisign to get real browser }}
+        <!-- LOCALIST COMMENT - START body -->
+        <header>
+            <img title="{{logo.alt}}" alt="{{logo.alt}}" src="{{logo.src}}" width="{{logo.width}}" height="{{logo.height}}"></img>
+            <button class="fa fa-search" title="Search" id="search-button">Search</button>
+            <label for="menu-checkbox">
+                <span class="fa fa-bars" title="Menu"></span>
+            </label>
+            <input type="checkbox" id="menu-checkbox"></input>
+            <nav id="main-menu">
+                <ul>
+                    <li><a>Join</a></li>
+                    <li><a>Login</a></li>
+                    <li>
+                        <span>About</span>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="//locals.social/about-company">Company</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="//locals.social/about-team">The Team</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="//locals.social/contact">Contact</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="//locals.social/faqs">FAQ's</a></li>
+                </ul>
+            </nav>
+        </header>
+        <nav>
+            {{! TODO: Move this somewhere more appropriate }}
+            <!-- LOCALIST COMMENT - PLACEHOLDER user_menu -->
+        </nav>
+        <div id="content-container">
+            <nav id="localist-breadcrumb">
+                <!-- LOCALIST COMMENT - PLACEHOLDER top_bar -->
+            </nav>
+            <div id="localist-content">
+                <!-- LOCALIST COMMENT - PLACEHOLDER content -->
+            </div>
+        </div>
+        <footer>
+            <ul>
+                <li
+
+            </ul>
+        </footer>
+        <!-- LOCALIST COMMENT - END body -->
+    </body>
+</html>

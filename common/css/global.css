@@ -1,0 +1,15 @@
+#main-menu {
+    display: none;
+}
+
+label[for="menu-checkbox"] {
+    user-select: none;
+}
+
+#menu-checkbox {
+    display: none;
+}
+
+#menu-checkbox:checked ~ #main-menu {
+    display: block;
+}
