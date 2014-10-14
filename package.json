@@ -1,0 +1,16 @@
+{
+  "name": "manlysocial_silk_wrapper",
+  "version": "0.1.0",
+  "description": "SILK Wrapper templates & generator script for ManlySocial",
+  "author": "Jack Coulter <jscinoz@jscinoz.so>",
+  "license": "CC-0",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-assemble": "^0.1.7",
+    "gulp-concat": "^2.4.1",
+    "gulp-imagemin": "^1.0.1",
+    "gulp-myth": "^1.0.1",
+    "imagemin-pngcrush": "^1.0.0",
+    "nconf": "^0.6.9"
+  }
+}
