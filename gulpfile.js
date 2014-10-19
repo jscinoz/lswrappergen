@@ -5,6 +5,8 @@ var gulp = require("gulp"),
     concat = require("gulp-concat"),
     assemble = require("gulp-assemble"),
     myth = require("gulp-myth"),
+    uglify = require("gulp-uglify"),
+    sourcemaps = require("gulp-sourcemaps"),
     imagemin = require("gulp-imagemin"),
     pngcrush = require("imagemin-pngcrush");
 
@@ -32,8 +34,33 @@ var tasks = {
 
         }
     },
+    uglify: {
+        getInputGlobs: function(brand) {
+            return "common/js/*.js";
+        },
+        getDestPath: function(brand) {
+            return ["build", brand, "js"].join("/");
+        },
+        taskFn: function(brand) {
+            var stream = gulp.src(this.getInputGlobs(brand));
+
+
+            if (!nconf.get("production")) {
+                stream = stream.pipe(sourcemaps.init());
+            }
+
+            stream = stream.pipe(concat("main.js"))
+                           .pipe(uglify());
+
+            if (!nconf.get("production")) {
+                stream = stream.pipe(sourcemaps.write());
+            }
+
+            return stream.pipe(gulp.dest(this.getDestPath(brand)));
+        }
+    },
     assemble: {
-        // globComponnent is an optional parameter to return a subset of globs
+        // globComponent is an optional parameter to return a subset of globs
         getInputGlobs: function(brand, globComponent) {
             var globs = {
                     template: [
@@ -151,5 +178,4 @@ function createTasks(prefix, taskBuilder) {
 
 gulp.task("build", createTasks("build", makeTask));
 gulp.task("watch", createTasks("watch", makeWatch));
-
 gulp.task("default", ["build", "watch"]);
