@@ -1,0 +1,8 @@
+{
+    "brandName": "Human-readable brand name here (e.g. Manly Social)",
+    "wrapperHost": "URL prefix for the server that will host the generated wrapper",
+    "logo": {
+        "src": "img/logo.png",
+        "alt": "Alt text for logo image"
+    }
+}

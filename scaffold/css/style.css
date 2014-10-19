@@ -1,0 +1,7 @@
+/* Define the colour theme for the brand */
+:root {
+    --color-primary: red;
+    --color-secondary: blue;
+}
+
+/* Add any other brand-specific styles here */

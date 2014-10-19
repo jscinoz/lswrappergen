@@ -15,7 +15,7 @@ nconf.file("config.json");
 
 // Tasks to be run for each brand
 var tasks = {
-    myth: {
+    css: {
         getInputGlobs: function(brand) {
             return [
                 "common/css/*.css",
@@ -34,7 +34,7 @@ var tasks = {
 
         }
     },
-    uglify: {
+    js: {
         getInputGlobs: function(brand) {
             return "common/js/*.js";
         },
@@ -59,7 +59,7 @@ var tasks = {
             return stream.pipe(gulp.dest(this.getDestPath(brand)));
         }
     },
-    assemble: {
+    html: {
         // globComponent is an optional parameter to return a subset of globs
         getInputGlobs: function(brand, globComponent) {
             var globs = {
@@ -97,20 +97,28 @@ var tasks = {
                 .pipe(gulp.dest(this.getDestPath(brand)));
         }
     },
-    imagemin: {
+    images: {
         getInputGlobs: function(brand) {
-            return ["brands", brand, "img/*"].join("/")
+            return [
+                "common/img/*",
+                [ "brands", brand, "img/*" ].join("/")
+            ]
         },
         getDestPath: function(brand) {
             return ["build", brand, "img"].join("/");
         },
         taskFn: function(brand) {
             return gulp.src(this.getInputGlobs(brand))
-                // XXX: Re-enable later
-                /*.pipe(imagemin({
-                    progressive: true,
-                    use: [ pngcrush() ] 
-                }))*/
+                .pipe(imagemin({
+                    progressive: true
+                    // imagemin-pngcrush is currently broken, try again later
+                    // with a version GREATER than 2.0.0
+                    /*
+                    use: [
+                        pngcrush({ reduce: true })
+                    ] 
+                    */
+                }))
                 .pipe(gulp.dest(this.getDestPath(brand)));
         }
     },
@@ -175,6 +183,26 @@ function createTasks(prefix, taskBuilder) {
 
     return brandTasks;
 }
+
+function generateBrandScaffold(brand) {
+    return gulp.src("scaffold/**")
+        .pipe(gulp.dest(["brands", brand].join("/")));
+}
+
+// TODO: Find all args matching RE, create task for each
+// TODO if it's missing a brand, use inquirer to ask for it
+function createGenerationTasks() {
+    var taskRE = /generate-brand-scaffold:(.+)/,
+        brandName, matches, taskName;
+
+    if ((taskName = process.argv[2]) && (matches = taskName.match(taskRE))) { 
+        brandName = matches[1];
+
+        gulp.task(taskName, generateBrandScaffold.bind(this, brandName));
+    }
+}
+
+createGenerationTasks();
 
 gulp.task("build", createTasks("build", makeTask));
 gulp.task("watch", createTasks("watch", makeWatch));
