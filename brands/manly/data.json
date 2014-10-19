@@ -1,9 +1,7 @@
 {
+    "brandName": "Manly Social",
     "logo": {
         "src": "img/logo.png",
-        "alt": "Manly Social Logo",
-        "width": 200,
-        "height": 80
+        "alt": "Manly Social Logo"
     }
-
 }
