@@ -1,5 +1,6 @@
 {
     "brandName": "Manly Social",
+    "wrapperHost": "http://jscinoz.so:3000",
     "logo": {
         "src": "img/logo.png",
         "alt": "Manly Social Logo"

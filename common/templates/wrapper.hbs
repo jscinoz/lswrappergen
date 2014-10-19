@@ -7,10 +7,7 @@
         <!-- LOCALIST COMMENT - PLACEHOLDER localist_styles -->
         <!-- LOCALIST COMMENT - PLACEHOLDER localist_js -->
         {{! NOTE: Localist injects the <title> tag, so don't add it here }}
-<!--
-        <link rel="stylesheet" type="text/css" href="css/style.css">
--->
-        <link rel="stylesheet" type="text/css" href="http://jscinoz.so:3000/css/style.css">
+        <link rel="stylesheet" type="text/css" href="{{wrapperHost}}/css/style.css">
         <!-- LOCALIST COMMENT - END head_tags -->
     </head>
     <body>
@@ -18,17 +15,17 @@
         <!-- LOCALIST COMMENT - START body -->
         <header id="main-header">
             {{! Dimensions needed? }}
-            <img id="header-logo" title="{{logo.alt}}" alt="{{logo.alt}}" src="http://jscinoz.so:3000/{{logo.src}}"></img>
-<!--
-            <img id="header-logo" title="{{logo.alt}}" alt="{{logo.alt}}" src="{{logo.src}}"></img>
--->
-            <button id="search-button" class="fa fa-search" title="Search" id="search-button">Search</button>
-            <button class="fa fa-bars menu-toggle" title="Menu" id="menu-button" data-menu="#main-menu"></button>
+            <div id="logo-container">
+                <img id="header-logo" title="{{logo.alt}}" alt="{{logo.alt}}" src="{{wrapperHost}}/{{logo.src}}"></img>
+            </div>
+            <button id="search-button" class="fa fa-search toggle" title="Search" id="search-button" data-target="#search-container"></button>
+            <button class="fa fa-bars toggle" title="Menu" id="menu-button" data-target="#main-menu"></button>
         </header>
         <nav id="menu-container">
+            <ul id="search-container"></ul>
             <ul id="main-menu" class="menu">
                 <li>
-                    <button class="menu-toggle submenu-toggle" data-menu="#menu-about">About</button>
+                    <button class="toggle toggle-submenu" data-target="#menu-about">About</button>
                     <ul class="menu submenu" id="menu-about">
                         <li>
                             <a target="_blank" href="//locals.social/about-company">Company</a>
@@ -43,10 +40,8 @@
                 </li>
                 <li><a href="//locals.social/faqs">FAQ's</a></li>
             </ul>
-            <ul id="search-container"></ul>
         </nav>
         <nav id="localist-menu-container">
-            {{! TODO: Move this somewhere more appropriate }}
             <!-- LOCALIST COMMENT - PLACEHOLDER user_menu -->
         </nav>
         <div id="content-container">
@@ -70,7 +65,7 @@
                 <li>Subscribe</li>
             </ul>
             {{! TODO: Add image, asset to be provided }}
-            <p>Powered by <img id="ls-logo"></p>
+            <p id="powered-by">Powered by <img id="ls-logo"></p>
             <div id="social-icons">
                 <a id="social-icon-twitter" class="fa fa-twitter social-icon" title="Twitter"></a>
                 <a id="social-icon-facebook" class="fa fa-facebook social-icon" title="Facebook"></a>
@@ -81,10 +76,7 @@
             </div>
         </footer>
         {{! Localist strips out script tags in head, so this must go here }}
-        <script async type="application/javascript" src="http://jscinoz.so:3000/js/main.js"></script>
-<!--
-        <script async type="application/javascript" src="js/main.js"></script>
--->
+        <script async type="application/javascript" src="{{wrapperHost}}/js/main.js"></script>
         <!-- LOCALIST COMMENT - END body -->
     </body>
 </html>

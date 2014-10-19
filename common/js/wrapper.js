@@ -1,9 +1,9 @@
 (function() {
     var cache = {},
         listenerMap = {
-            ".menu-toggle": {
+            ".toggle": {
                 events: "touchstart click",
-                handler: deghost(menuButtonHandler)
+                handler: deghost(toggleHandler)
             }
         },
         relocationMap = {
@@ -50,13 +50,13 @@
         };
     }
 
-    function menuButtonHandler(e) {
-        var $targetMenu = $_cached($(this).data("menu"));
+    function toggleHandler(e) {
+        var $target = $_cached($(this).data("target"));
 
-        if ($targetMenu.hasClass("open")) {
-            $targetMenu.removeClass("open");
+        if ($target.hasClass("open")) {
+            $target.removeClass("open");
         } else {
-            $targetMenu.addClass("open");
+            $target.addClass("open");
         }
     }
 
