@@ -2,45 +2,50 @@
 <html>
     <head>
         <!-- LOCALIST COMMENT - START head_tags -->
+        {{! FIXME: Localist shoves its own viewport tag in }}
+        <meta name="viewport" content="width=device-width">
         <!-- LOCALIST COMMENT - PLACEHOLDER localist_styles -->
         <!-- LOCALIST COMMENT - PLACEHOLDER localist_js -->
         {{! NOTE: Localist injects the <title> tag, so don't add it here }}
+<!--
         <link rel="stylesheet" type="text/css" href="css/style.css">
+-->
+        <link rel="stylesheet" type="text/css" href="http://jscinoz.so:3000/css/style.css">
         <!-- LOCALIST COMMENT - END head_tags -->
     </head>
     <body>
         {{! If IE & IE LT 11, show message advisign to get real browser }}
         <!-- LOCALIST COMMENT - START body -->
-        <header>
-            <img title="{{logo.alt}}" alt="{{logo.alt}}" src="{{logo.src}}" width="{{logo.width}}" height="{{logo.height}}"></img>
-            <button class="fa fa-search" title="Search" id="search-button">Search</button>
-            <label for="menu-checkbox">
-                <span class="fa fa-bars" title="Menu"></span>
-            </label>
-            <input type="checkbox" id="menu-checkbox"></input>
-            <nav id="main-menu">
-                <ul>
-                    <li><a>Join</a></li>
-                    <li><a>Login</a></li>
-                    <li>
-                        <span>About</span>
-                        <ul>
-                            <li>
-                                <a target="_blank" href="//locals.social/about-company">Company</a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="//locals.social/about-team">The Team</a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="//locals.social/contact">Contact</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="//locals.social/faqs">FAQ's</a></li>
-                </ul>
-            </nav>
+        <header id="main-header">
+            {{! Dimensions needed? }}
+            <img id="header-logo" title="{{logo.alt}}" alt="{{logo.alt}}" src="http://jscinoz.so:3000/{{logo.src}}"></img>
+<!--
+            <img id="header-logo" title="{{logo.alt}}" alt="{{logo.alt}}" src="{{logo.src}}"></img>
+-->
+            <button id="search-button" class="fa fa-search" title="Search" id="search-button">Search</button>
+            <button class="fa fa-bars menu-toggle" title="Menu" id="menu-button" data-menu="#main-menu"></button>
         </header>
-        <nav>
+        <nav id="menu-container">
+            <ul id="main-menu" class="menu">
+                <li>
+                    <button class="menu-toggle submenu-toggle" data-menu="#menu-about">About</button>
+                    <ul class="menu submenu" id="menu-about">
+                        <li>
+                            <a target="_blank" href="//locals.social/about-company">Company</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="//locals.social/about-team">The Team</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="//locals.social/contact">Contact</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="//locals.social/faqs">FAQ's</a></li>
+            </ul>
+            <ul id="search-container"></ul>
+        </nav>
+        <nav id="localist-menu-container">
             {{! TODO: Move this somewhere more appropriate }}
             <!-- LOCALIST COMMENT - PLACEHOLDER user_menu -->
         </nav>
@@ -53,11 +58,33 @@
             </div>
         </div>
         <footer>
-            <ul>
-                <li
+            <div id="app-info">
+                <p>{{brandName}} is available free for iPhone and Android</p>
+                <div id="appstore-icons">
 
+                </div>
+            </div>
+            <ul id="footer-links">
+                <li>Privacy</li>
+                <li>T&Cs</li>
+                <li>Subscribe</li>
             </ul>
+            {{! TODO: Add image, asset to be provided }}
+            <p>Powered by <img id="ls-logo"></p>
+            <div id="social-icons">
+                <a id="social-icon-twitter" class="fa fa-twitter social-icon" title="Twitter"></a>
+                <a id="social-icon-facebook" class="fa fa-facebook social-icon" title="Facebook"></a>
+                <a id="social-icon-pinterest" class="fa fa-pinterest social-icon" title="Pinterest"></a>
+                <a id="social-icon-instagram" class="fa fa-instagram social-icon" title="Instagram"></a>
+                <a id="social-icon-google-plus" class="fa fa-google-plus social-icon" title="Google+"></a>
+                <a id="social-icon-email" class="fa fa-envelope social-icon" title="Email"></a>
+            </div>
         </footer>
+        {{! Localist strips out script tags in head, so this must go here }}
+        <script async type="application/javascript" src="http://jscinoz.so:3000/js/main.js"></script>
+<!--
+        <script async type="application/javascript" src="js/main.js"></script>
+-->
         <!-- LOCALIST COMMENT - END body -->
     </body>
 </html>
