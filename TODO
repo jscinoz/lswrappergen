@@ -1,0 +1,13 @@
+* Yeoman generator for new brand
+* Clarify with client colours are purposes (i.e. primary, secondary, tertiary)
+  * Think of these as variables where something different is substituted in
+    as the VALUE for each brand.
+  * Primary is primary (etc) on all brands
+* Explain how localist injections work, and how this impacts upon the desired
+  placement of links & buttons
+* Appstore icons must be links, and these require formal permission from
+  apple/google to legally use.
+* Localist FB include is broken
+* Localist SILK wrapper is stripping out JS D:
+* Scripts need to be inlined, probably
+* Localist knowledge base no longer accessible? - need auth details
