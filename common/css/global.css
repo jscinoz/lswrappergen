@@ -63,6 +63,15 @@ body {
     width: 100%;
 }
 
+#main-footer {
+    margin-top: 1rem;
+}
+
+/* Hidden until the app is actually available */
+#app-info {
+    display: none;
+}
+
 #footer-links,
 .menu {
     padding: 0;
@@ -124,12 +133,23 @@ body {
     font-size: 0.75rem;
 }
 
+#footer-links li {
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+#footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 #social-icons {
     background-color: #f5f7f4;
     display: flex;
-    max-width: 20rem;
-    justify-content: space-around;
-    margin: 0 auto;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem 0;
 }
 
 .social-icon {
@@ -140,6 +160,7 @@ body {
     line-height: 3rem;
     color: white;
     font-size: 2rem;
+    margin: 0 0.25rem;
 }
 
 #social-icon-twitter {
@@ -176,15 +197,14 @@ body {
     vertical-align: middle;
 }
 
+#powered-by > span {
+    padding-right: 0.5rem;
+}
+
 #footer-links li,
 #powered-by {
     text-align: center;
     color: var(--color-primary);
-}
-
-/* Hidden until the app is actually available */
-#app-info {
-    display: none;
 }
 
 @media (min-width: 768px) {
@@ -246,6 +266,11 @@ body {
     .menu:not(.submenu) > li:not(:last-child) {
         margin-right: 1rem;
     }
+
+    #footer-links li {
+        width: auto;
+        margin: 0 2rem;
+    }
 }
 
 /* Localist fixes */
@@ -282,6 +307,10 @@ body {
 
 .sponsored {
     background-color: var(--color-tertiary);
+}
+
+#share_events_block {
+    margin-bottom: 0;
 }
 
 .action_menu_items {

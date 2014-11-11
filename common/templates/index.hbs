@@ -8,6 +8,7 @@
         <!-- LOCALIST COMMENT - PLACEHOLDER localist_js -->
         {{! NOTE: Localist injects the <title> tag, so don't add it here }}
         <link rel="stylesheet" type="text/css" href="{{wrapperHost}}/css/style.css">
+        <script async type="application/javascript" src="{{wrapperHost}}/js/main.js"></script>
         <!-- LOCALIST COMMENT - END head_tags -->
     </head>
     <body>
@@ -56,7 +57,7 @@
         </div>
         <!-- LOCALIST COMMENT - END body -->
         <!-- LOCALIST COMMENT - START after_grid -->
-        <footer>
+        <footer id="main-footer">
             <div id="app-info">
                 <p>{{brandName}} is available free for iPhone</p>
                 <div id="appstore-icons">
@@ -70,9 +71,11 @@
             </ul>
             <p id="powered-by">
                 <span>Powered by</span>
-                <img alt="locals.social Logo" id="ls-logo"
-                     width="128" height="32"
-                     src="{{wrapperHost}}/img/locals-social-logo.png">
+                <a href="//locals.social">
+                    <img alt="locals.social Logo" id="ls-logo"
+                         width="128" height="32"
+                         src="{{wrapperHost}}/img/locals-social-logo.png">
+                 </a>
             </p>
             <div id="social-icons">
                 <a id="social-icon-twitter" class="fa fa-twitter social-icon" title="Twitter"></a>
@@ -85,6 +88,5 @@
         </footer>
         <!-- LOCALIST COMMENT - END after_grid -->
         {{! Localist strips out script tags in head, so this must go here }}
-        <script async type="application/javascript" src="{{wrapperHost}}/js/main.js"></script>
     </body>
 </html>
