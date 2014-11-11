@@ -11,6 +11,7 @@ body {
 #main-header {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #menu-button,
@@ -22,8 +23,8 @@ body {
 }
 
 #logo-container {
-    width: 100%;
     max-height: 5rem;
+    flex-grow: 2;
 }
 
 #header-logo {
@@ -80,7 +81,6 @@ body {
 
 .menu li {
     text-align: right;
-    font-weight: bold;
 }
 
 .menu li a {
@@ -101,10 +101,6 @@ body {
 .submenu {
     border-right: 2px solid var(--color-primary);
     padding-right: 0.5rem;
-} 
-
-.submenu li {
-    font-weight: normal;
 }
 
 .submenu li a {
@@ -121,7 +117,6 @@ body {
     margin-left: 0.5rem;
     margin-top: 0.15rem;
     font-size: 0.75rem;
-    font-weight: normal;
 }
 
 #social-icons {
@@ -143,45 +138,51 @@ body {
 }
 
 #social-icon-twitter {
-    background-color: #fcb1b7; 
+    background-color: #fcb1b7;
 }
 
 #social-icon-facebook {
-    background-color: #ced21d; 
+    background-color: #ced21d;
 }
 
 #social-icon-pinterest {
-    background-color: #ffbe67; 
+    background-color: #ffbe67;
 }
 
 #social-icon-instagram {
-    background-color: #abcde8; 
+    background-color: #abcde8;
 }
 
 #social-icon-google-plus {
-    background-color: #e891d0; 
+    background-color: #e891d0;
 }
 
 #social-icon-email {
-    background-color: #929290; 
+    background-color: #929290;
+}
+
+#powered-by {
+    display: table;
+    margin: 0 auto;
+}
+
+#powered-by > * {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #footer-links li,
 #powered-by {
     text-align: center;
+    color: var(--color-primary);
 }
 
-@media (min-width: 321px) {
-
+/* Hidden until the app is actually available */
+#app-info {
+    display: none;
 }
 
-@media (min-width: 1025px)  {
-    body {
-        min-width: 1024px;
-        max-width: 75%;
-        margin: 0 auto;
-    }
-
+@media (min-width: 768px) {
     #menu-container {
         display: flex;
         justify-content: space-between;
@@ -204,7 +205,7 @@ body {
     }
 
     .toggle-submenu {
-        min-width: 4.5rem;  
+        min-width: 4.5rem;
     }
 
     .toggle-submenu::after {
@@ -215,7 +216,7 @@ body {
     .menu:not(.submenu) {
         display: flex;
         justify-content: flex-start;
-    } 
+    }
 
     .submenu {
         border-left: 2px solid var(--color-primary);
@@ -226,8 +227,8 @@ body {
     }
 
     .submenu.open {
-        flex-wrap: nowrap; 
-        flex-direction: column; 
+        flex-wrap: nowrap;
+        flex-direction: column;
     }
 
 
