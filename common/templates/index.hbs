@@ -11,36 +11,38 @@
         <!-- LOCALIST COMMENT - END head_tags -->
     </head>
     <body>
-        {{! If IE & IE LT 11, show message advisign to get real browser }}
+        {{! If IE & IE LT 11, show message advising to get real browser }}
         <!-- LOCALIST COMMENT - START body -->
         <header id="main-header">
             {{! Dimensions needed? }}
             <div id="logo-container">
-                <img id="header-logo" title="{{logo.alt}}" alt="{{logo.alt}}" src="{{wrapperHost}}/{{logo.src}}"></img>
+                <a href="{{logoLink}}">
+                    <img id="header-logo" title="{{logo.alt}}" alt="{{logo.alt}}" src="{{wrapperHost}}/{{logo.src}}">
+                </a>
             </div>
-            <button id="search-button" class="fa fa-search toggle" title="Search" id="search-button" data-target="#search-container"></button>
+            <button id="search-button" class="fa fa-search toggle" title="Search" data-target="#search-container"></button>
             <button class="fa fa-bars toggle" title="Menu" id="menu-button" data-target="#main-menu"></button>
+            <nav id="menu-container">
+                <ul id="search-container"></ul>
+                <ul id="main-menu" class="menu">
+                    <li>
+                        <button class="toggle toggle-submenu" data-target="#menu-about">About</button>
+                        <ul class="menu submenu" id="menu-about">
+                            <li>
+                                <a target="_blank" href="//locals.social/about-company">Company</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="//locals.social/about-team">The Team</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="//locals.social/contact">Contact</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="//locals.social/faqs">FAQ's</a></li>
+                </ul>
+            </nav>
         </header>
-        <nav id="menu-container">
-            <ul id="search-container"></ul>
-            <ul id="main-menu" class="menu">
-                <li>
-                    <button class="toggle toggle-submenu" data-target="#menu-about">About</button>
-                    <ul class="menu submenu" id="menu-about">
-                        <li>
-                            <a target="_blank" href="//locals.social/about-company">Company</a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="//locals.social/about-team">The Team</a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="//locals.social/contact">Contact</a>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="//locals.social/faqs">FAQ's</a></li>
-            </ul>
-        </nav>
         <nav id="localist-menu-container">
             <!-- LOCALIST COMMENT - PLACEHOLDER user_menu -->
         </nav>
@@ -52,20 +54,26 @@
                 <!-- LOCALIST COMMENT - PLACEHOLDER content -->
             </div>
         </div>
+        <!-- LOCALIST COMMENT - END body -->
+        <!-- LOCALIST COMMENT - START after_grid -->
         <footer>
             <div id="app-info">
-                <p>{{brandName}} is available free for iPhone and Android</p>
+                <p>{{brandName}} is available free for iPhone</p>
                 <div id="appstore-icons">
 
                 </div>
             </div>
             <ul id="footer-links">
                 <li>Privacy</li>
-                <li>T&Cs</li>
+                <li>T&amp;Cs</li>
                 <li>Subscribe</li>
             </ul>
-            {{! TODO: Add image, asset to be provided }}
-            <p id="powered-by">Powered by <img id="ls-logo"></p>
+            <p id="powered-by">
+                <span>Powered by</span>
+                <img alt="locals.social Logo" id="ls-logo"
+                     width="128" height="32"
+                     src="{{wrapperHost}}/img/locals-social-logo.png">
+            </p>
             <div id="social-icons">
                 <a id="social-icon-twitter" class="fa fa-twitter social-icon" title="Twitter"></a>
                 <a id="social-icon-facebook" class="fa fa-facebook social-icon" title="Facebook"></a>
@@ -75,8 +83,8 @@
                 <a id="social-icon-email" class="fa fa-envelope social-icon" title="Email"></a>
             </div>
         </footer>
+        <!-- LOCALIST COMMENT - END after_grid -->
         {{! Localist strips out script tags in head, so this must go here }}
         <script async type="application/javascript" src="{{wrapperHost}}/js/main.js"></script>
-        <!-- LOCALIST COMMENT - END body -->
     </body>
 </html>
