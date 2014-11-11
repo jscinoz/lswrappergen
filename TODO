@@ -1,11 +1,17 @@
 * Dev tasks
-  * Write README
-  * Yeoman generator for new brand
-  * Should we inline scripts & styles?
-* Clarifications
-  * Clarify with client colours are purposes (i.e. primary, secondary, tertiary)
+  * Write documentation for future developers
+  * Determine if scripts should be inlined, will need to benchmark and audit on
+    proper webhost to determine if appropriate.
+  * List of skills require for dev (node, gulp, js, html5, css3 etc)
+  * Not now (maybe later) transitions on menu toggles
+  * Add locals.social logo in footer
+    * See "Re: Mock-up" email, on 7/10
+  * Once done, set up on dreamhost w/cloudflare
+* Client tasks
+  * Clarify with client colours are purposes (i.e. primary, secondary, tertiary, button, etc)
     * Think of these as variables where something different is substituted in
       as the VALUE for each brand.
     * Primary is primary (etc) on all brands
   * Appstore icons must be links, and these require formal permission from
     apple/google to legally use.
+  * Need assorted social network links
