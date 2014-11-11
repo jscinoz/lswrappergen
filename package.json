@@ -8,7 +8,7 @@
     "gulp": "^3.8.8",
     "gulp-assemble": "^0.1.7",
     "gulp-concat": "^2.4.1",
-    "gulp-imagemin": "^1.0.1",
+    "gulp-imagemin": "^1.2.1",
     "gulp-myth": "^1.0.1",
     "gulp-sourcemaps": "^1.2.4",
     "gulp-uglify": "^1.0.1",
