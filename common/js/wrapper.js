@@ -33,7 +33,7 @@
     }
 
     function registerEventHandlers() {
-        var listener, selector; 
+        var listener, selector;
 
         for (selector in listenerMap) if (listenerMap.hasOwnProperty(selector)) {
             listener = listenerMap[selector];

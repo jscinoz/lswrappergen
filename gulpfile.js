@@ -80,7 +80,7 @@ var tasks = {
 
                     result = result.concat(globs[key]);
                 }
-                
+
                 return result;
             }
         },
@@ -89,7 +89,7 @@ var tasks = {
         },
         taskFn: function(brand) {
             var options = {
-                data: this.getInputGlobs(brand, "data") 
+                data: this.getInputGlobs(brand, "data")
             };
 
             return gulp.src(this.getInputGlobs(brand, "template"))
@@ -116,7 +116,7 @@ var tasks = {
                     /*
                     use: [
                         pngcrush({ reduce: true })
-                    ] 
+                    ]
                     */
                 }))
                 .pipe(gulp.dest(this.getDestPath(brand)));
@@ -139,7 +139,7 @@ var tasks = {
 function makeTask(task, brand) {
     var taskName = [task, brand].join("-"),
         taskObj = tasks[task];
-    
+
     gulp.task(taskName, taskObj.taskFn.bind(taskObj, brand));
 
     return taskName;
@@ -149,7 +149,7 @@ function makeWatch(task, brand) {
     var taskName = [task, brand].join("-"),
         watchName = ["watch", taskName].join("-"),
         taskObj = tasks[task];
-    
+
     gulp.task(watchName, function(brand, taskName) {
         gulp.watch(this.getInputGlobs(brand), [taskName]);
     }.bind(taskObj, brand, taskName));
@@ -186,6 +186,7 @@ function createTasks(prefix, taskBuilder) {
 
 function generateBrandScaffold(brand) {
     return gulp.src("scaffold/**")
+        // TODO: add gulp-conflict here.
         .pipe(gulp.dest(["brands", brand].join("/")));
 }
 
@@ -195,7 +196,7 @@ function createGenerationTasks() {
     var taskRE = /generate-brand-scaffold:(.+)/,
         brandName, matches, taskName;
 
-    if ((taskName = process.argv[2]) && (matches = taskName.match(taskRE))) { 
+    if ((taskName = process.argv[2]) && (matches = taskName.match(taskRE))) {
         brandName = matches[1];
 
         gulp.task(taskName, generateBrandScaffold.bind(this, brandName));
