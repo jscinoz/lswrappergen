@@ -9,6 +9,7 @@
         relocationMap = {
             "#localist-menu-container .action_menu li:not(.search_action)":
                 "#main-menu",
+            ".action_menu_items": "#menu-container",
             "#localist-menu-container .action_menu li.search_action":
                 "#search-container"
         };

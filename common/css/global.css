@@ -37,6 +37,10 @@ body {
     color: var(--color-primary);
 }
 
+#main-menu li a {
+    padding-bottom: 0.25rem;
+}
+
 #localist-menu-container,
 #search-container,
 .menu {
@@ -111,6 +115,7 @@ body {
     font: inherit;
 }
 
+#x-me-menu::after,
 .toggle-submenu::after {
     content: "\25bc";
     position: absolute;
@@ -208,6 +213,7 @@ body {
         min-width: 4.5rem;
     }
 
+    #x-me-menu::after,
     .toggle-submenu::after {
         position: static;
     }
@@ -276,4 +282,8 @@ body {
 
 .sponsored {
     background-color: var(--color-tertiary);
+}
+
+.action_menu_items {
+    width: auto !important;
 }
