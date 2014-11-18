@@ -64,26 +64,28 @@
 
                 </div>
             </div>
+            {{! Temporarily removed at client request }}
+            {{!--
             <ul id="footer-links">
                 <li>Privacy</li>
                 <li>T&amp;Cs</li>
                 <li>Subscribe</li>
             </ul>
+            --}}
             <p id="powered-by">
                 <span>Powered by</span>
-                <a href="//locals.social">
-                    <img alt="locals.social Logo" id="ls-logo"
-                         width="128" height="32"
-                         src="{{wrapperHost}}/img/locals-social-logo.png">
-                 </a>
+                <img alt="locals.social Logo" id="ls-logo" width="128" height="32"
+                     src="{{wrapperHost}}/img/locals-social-logo.png">
             </p>
             <div id="social-icons">
-                <a id="social-icon-twitter" class="fa fa-twitter social-icon" title="Twitter"></a>
-                <a id="social-icon-facebook" class="fa fa-facebook social-icon" title="Facebook"></a>
-                <a id="social-icon-pinterest" class="fa fa-pinterest social-icon" title="Pinterest"></a>
-                <a id="social-icon-instagram" class="fa fa-instagram social-icon" title="Instagram"></a>
-                <a id="social-icon-google-plus" class="fa fa-google-plus social-icon" title="Google+"></a>
-                <a id="social-icon-email" class="fa fa-envelope social-icon" title="Email"></a>
+                <a id="social-icon-twitter" class="fa fa-twitter social-icon"
+                    title="Twitter" href="{{socialLinks.twitter}}"></a>
+                <a id="social-icon-facebook" class="fa fa-facebook social-icon"
+                    title="Facebook" href="{{socialLinks.facebook}}"></a>
+                <a id="social-icon-instagram" class="fa fa-instagram
+                    social-icon" title="Instagram" href="{{socialLinks.instagram}}"></a>
+                <a id="social-icon-email" class="fa fa-envelope social-icon"
+                    title="Email" href="{{socialLinks.email}}"></a>
             </div>
         </footer>
         <!-- LOCALIST COMMENT - END after_grid -->

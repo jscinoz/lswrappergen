@@ -5,5 +5,11 @@
     "logo": {
         "src": "img/logo.png",
         "alt": "Manly Social Logo"
+    },
+    "socialLinks": {
+        "twitter": "",
+        "facebook": "",
+        "instagram": "",
+        "email": "mailto:manlylocal@manlysocial.com"
     }
 }
