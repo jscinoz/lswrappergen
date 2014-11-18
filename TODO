@@ -2,6 +2,7 @@
   * Write documentation for future developers
   * List of skills require for dev (node, gulp, js, html5, css3 etc)
   * Not now (maybe later) transitions on menu toggles
+  * See TODOs in gulpfile
 * Client tasks
   * Clarify with client colours are purposes (i.e. primary, secondary, tertiary, button, etc)
     * Think of these as variables where something different is substituted in
