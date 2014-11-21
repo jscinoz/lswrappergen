@@ -138,7 +138,7 @@ var tasks = {
 }
 
 function makeTask(task, brand) {
-    var taskName = [task, brand].join("-"),
+    var taskName = [task, brand].join(":"),
         taskObj = tasks[task];
 
     gulp.task(taskName, taskObj.taskFn.bind(taskObj, brand));
@@ -147,7 +147,7 @@ function makeTask(task, brand) {
 }
 
 function makeWatch(task, brand) {
-    var taskName = [task, brand].join("-"),
+    var taskName = [task, brand].join(":"),
         watchName = ["watch", taskName].join("-"),
         taskObj = tasks[task];
 
@@ -175,7 +175,7 @@ function createTasks(prefix, taskBuilder) {
 
     for (var i = 0, ii = brands.length; i < ii; ++i) {
         brand = brands[i];
-        taskName = [prefix, brand].join("-");
+        taskName = [prefix, brand].join(":");
 
         gulp.task(taskName, makeBrandTasks(brand, taskBuilder));
 
