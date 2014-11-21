@@ -190,16 +190,17 @@ function generateBrandScaffold(brand) {
         .pipe(gulp.dest(["brands", brand].join("/")));
 }
 
-// TODO: Find all args matching RE, create task for each
-// TODO if it's missing a brand, use inquirer to ask for it
 function createGenerationTasks() {
     var taskRE = /generate-brand-scaffold:(.+)/,
-        brandName, matches, taskName;
+        brandName, matches, taskName,
+        i, ii;
 
-    if ((taskName = process.argv[2]) && (matches = taskName.match(taskRE))) {
-        brandName = matches[1];
+    for (i = 2, ii = process.argv.length; i < ii; ++i) {
+        if ((taskName = process.argv[i]) && (matches = taskName.match(taskRE))) {
+            brandName = matches[1];
 
-        gulp.task(taskName, generateBrandScaffold.bind(this, brandName));
+            gulp.task(taskName, generateBrandScaffold.bind(this, brandName));
+        }
     }
 }
 
