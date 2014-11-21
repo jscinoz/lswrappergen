@@ -6,6 +6,7 @@ var gulp = require("gulp"),
     assemble = require("gulp-assemble"),
     myth = require("gulp-myth"),
     uglify = require("gulp-uglify"),
+    conflict = require("gulp-conflict"),
     sourcemaps = require("gulp-sourcemaps"),
     imagemin = require("gulp-imagemin"),
     pngcrush = require("imagemin-pngcrush");
@@ -185,9 +186,11 @@ function createTasks(prefix, taskBuilder) {
 }
 
 function generateBrandScaffold(brand) {
+    var destPath = ["brands", brand].join("/");
+
     return gulp.src("scaffold/**")
-        // TODO: add gulp-conflict here.
-        .pipe(gulp.dest(["brands", brand].join("/")));
+        .pipe(conflict(destPath))
+        .pipe(gulp.dest(destPath));
 }
 
 function createGenerationTasks() {
