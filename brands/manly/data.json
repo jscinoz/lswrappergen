@@ -1,9 +1,8 @@
 {
     "brandName": "Manly Social",
     "wrapperHost": "http://static.manly.locals.social/wrapper",
-    "logoLink": "//calendar.manly.locals.social/",
     "logo": {
-        "src": "img/logo.png",
+        "link": "//calendar.manly.locals.social/",
         "alt": "Manly Social Logo"
     },
     "socialLinks": {

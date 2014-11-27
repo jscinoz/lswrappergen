@@ -22,12 +22,13 @@ into their deployable forms.
 ## Creating a new branded wrapper
 1. Generate the brand scaffolding with 'gulp generate-brand-scaffold:$BRAND'
 2. Set the URLs and other data as appropriate in brands/$BRAND/data.json
-3. Place your logo image as brands/$BRAND/img/logo.png (or the filename configured in data.json)
-4. Set brand colours as appropriate in brands/$BRAND/css/style.css
-5. Add any other brand-specific styling in style.css
-6. Build it (gulp build:$BRAND)
-7. Host it somewhere
-8. Configure your Localist instance's "SILK Wrapper URL" property to point at wherever you hosted the generated files.
+3. Place your logo image as brands/$BRAND/img/logo.png
+4. Place assorted favicon & app icons in brands/$BRAND/img/. See index.hbs for expected filenames & sizes (realfavicongenerator.net is a useful tool to generate these at the assorted sizes, from a large source image.)
+5. Set brand colours as appropriate in brands/$BRAND/css/style.css
+6. Add any other brand-specific styling in style.css
+7. Build it (gulp build:$BRAND)
+8. Host it somewhere
+9. Configure your Localist instance's "SILK Wrapper URL" property to point at wherever you hosted the generated files.
 
 ## Tools used
 * nconf for configuration file parsing

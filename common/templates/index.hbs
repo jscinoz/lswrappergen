@@ -7,6 +7,18 @@
         <!-- LOCALIST COMMENT - PLACEHOLDER localist_styles -->
         <!-- LOCALIST COMMENT - PLACEHOLDER localist_js -->
         {{! NOTE: Localist injects the <title> tag, so don't add it here }}
+        <link rel="shortcut icon" href="{{wrapperHost}}/img/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="{{wrapperHost}}/img/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{wrapperHost}}/img/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{wrapperHost}}/img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{wrapperHost}}/img/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{wrapperHost}}/img/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{wrapperHost}}/img/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{wrapperHost}}/img/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{wrapperHost}}/img/apple-touch-icon-152x152.png">
+        <link rel="icon" type="image/png" href="{{wrapperHost}}/img/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="{{wrapperHost}}/img/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="{{wrapperHost}}/img/favicon-32x32.png" sizes="32x32">
         <link rel="stylesheet" type="text/css" href="{{wrapperHost}}/css/style.css">
         <script async type="application/javascript" src="{{wrapperHost}}/js/main.js"></script>
         <!-- LOCALIST COMMENT - END head_tags -->
@@ -17,8 +29,8 @@
         <header id="main-header">
             {{! Dimensions needed? }}
             <div id="logo-container">
-                <a href="{{logoLink}}">
-                    <img id="header-logo" title="{{logo.alt}}" alt="{{logo.alt}}" src="{{wrapperHost}}/{{logo.src}}">
+                <a href="{{logo.link}}">
+                    <img id="header-logo" title="{{logo.alt}}" alt="{{logo.alt}}" src="{{wrapperHost}}/img/logo.png">
                 </a>
             </div>
             <button id="search-button" class="fa fa-search toggle" title="Search" data-target="#search-container"></button>
