@@ -7,17 +7,27 @@ they inject their own content), and to assemble the assorted static resources
 into their deployable forms.
 
 ## Tasks
-* generate-brand-scaffold:BRAND - Generate scaffolding for a new brand
+* generate-brand-scaffold:$BRAND - Generate scaffolding for a new brand
 * build - Build all brands
-* build:BRAND - Build a specific brand
+* build:$BRAND - Build a specific brand
 * watch - Watch source files for all brands & rebuild upon change
-* watch:BRAND - Watch source files for a specific brand & rebuild upon change
-* css:BRAND - Generate output CSS (via Myth) for a specific brand
-* js:BRAND - Generate output JS (via UglifyJS) for a specific brand
-* html:BRAND - Merge data for given brand into template (via Assemble)
-* images:BRAND - Generate output images (via imagemin) for a specific brand
-* fonts:BRAND - Copy fonts into build directory for a specific brand
-* watch-{js,css,html,images,fonts}:BRAND - Watch tasks corresponding to the five previous tasks
+* watch:$BRAND - Watch source files for a specific brand & rebuild upon change
+* css:$BRAND - Generate output CSS (via Myth) for a specific brand
+* js:$BRAND - Generate output JS (via UglifyJS) for a specific brand
+* html:$BRAND - Merge data for given brand into template (via Assemble)
+* images:$BRAND - Generate output images (via imagemin) for a specific brand
+* fonts:$BRAND - Copy fonts into build directory for a specific brand
+* watch-{js,css,html,images,fonts}:$BRAND - Watch tasks corresponding to the five previous tasks
+
+## Creating a new branded wrapper
+1. Generate the brand scaffolding with 'gulp generate-brand-scaffold:$BRAND'
+2. Set the URLs and other data as appropriate in brands/$BRAND/data.json
+3. Place your logo image as brands/$BRAND/img/logo.png (or the filename configured in data.json)
+4. Set brand colours as appropriate in brands/$BRAND/css/style.css
+5. Add any other brand-specific styling in style.css
+6. Build it (gulp build:$BRAND)
+7. Host it somewhere
+8. Configure your Localist instance's "SILK Wrapper URL" property to point at wherever you hosted the generated files.
 
 ## Tools used
 * nconf for configuration file parsing
